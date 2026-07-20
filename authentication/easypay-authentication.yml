@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  Live probe of https://app.fawaterk.com/api/v2/ (Authorization: Bearer challenge)
+  and https://app.fawaterk.com/documentation
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: vendorToken
+  type: http
+  scheme: bearer
+  description: >-
+    Fawaterak/EasyPay authenticates every API call with a vendor API token issued
+    from the merchant dashboard, sent in the HTTP Authorization header as
+    "Authorization: Bearer <token>". A missing token returns
+    {"status":"error","message":{"token":["Token Is Missing"]}}; an invalid token
+    returns {"token":["Invalid Token or inactive vendor."]}.
+  in: header
+  header_name: Authorization
+  format: Bearer <vendor-token>
+  sources:
+  - live-probe:https://app.fawaterk.com/api/v2/invoiceInitPay
+notes: >-
+  No OpenAPI/Swagger spec is published (both /openapi.json and /swagger.json return
+  the SPA HTML shell). The scheme above was confirmed by live probing the production
+  API host: sending "Authorization: Bearer [example key]" changes the error from "Token Is
+  Missing" to "Invalid Token or inactive vendor.", confirming a header-carried bearer
+  vendor token. No OAuth2/OIDC surface was found.
