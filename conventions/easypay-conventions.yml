@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  Live probe of https://app.fawaterk.com/api/v2/ response envelopes and headers
+  (2026-07-18) plus https://app.fawaterk.com/documentation
+api: Fawaterak API v2
+base_url: https://app.fawaterk.com/api/v2/
+authentication:
+  style: bearer-token
+  detail: Authorization header, "Bearer <vendor-token>"
+  ref: authentication/easypay-authentication.yml
+versioning:
+  style: uri-path
+  current: v2
+  example: https://app.fawaterk.com/api/v2/getPaymentmethods
+error_envelope:
+  format: custom
+  rfc9457: false
+  shape: '{"status":"error","message":{"<field>":["<message>", ...]}}'
+  success_status_field: '{"status":"success", ...}'
+  ref: errors/easypay-problem-types.yml
+  observed_examples:
+  - '{"status":"error","message":{"token":["Token Is Missing"]}}'
+  - '{"status":"error","message":{"token":["Invalid Token or inactive vendor."]}}'
+  - '{"status":"error","message":{"content-type":["The content-type field is required."]}}'
+rate_limit_signaling:
+  supported: true
+  headers:
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  observed_limit: 60
+  ref: rate-limits/easypay-rate-limits.yml
+content_type:
+  required: true
+  detail: Requests must set Content-Type (application/json); a missing content-type
+    returns {"content-type":["The content-type field is required."]}.
+idempotency:
+  documented: false
+  note: No idempotency-key header or contract was observed in live probes or the
+    developer portal; not asserted.
+pagination:
+  documented: unknown
+  note: No paginated collection response could be observed without a valid vendor
+    token; not asserted.
+security_headers_observed:
+- Strict-Transport-Security
+- X-Content-Type-Options
+- X-XSS-Protection

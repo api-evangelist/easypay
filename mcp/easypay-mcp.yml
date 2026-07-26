@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: >-
+  Derived from operations verified against the production Fawaterak API
+  (https://app.fawaterk.com/api/v2/, 2026-07-18). No official hosted MCP server was
+  found; no OpenAPI is published, so tools are grounded in live-verified routes only.
+server:
+  name: easypay
+  transport: http
+  url: null
+tools:
+- name: list_payment_methods
+  description: List available payment methods for the vendor.
+  source_operation: GET /api/v2/getPaymentmethods
+  verified: true
+- name: create_invoice_link
+  description: Create an invoice / payment link.
+  source_operation: POST /api/v2/createInvoiceLink
+  verified: true
+- name: initiate_invoice_payment
+  description: Initiate payment on an invoice.
+  source_operation: POST /api/v2/invoiceInitPay
+  verified: true
+- name: get_invoices_data
+  description: Retrieve vendor invoice data.
+  source_operation: GET /api/v2/getInvoicesData
+  verified: true
+notes: >-
+  Each route was confirmed live: real routes return the JSON auth envelope
+  {"status":"error","message":{"token":[...]}}, whereas unknown routes return HTML
+  404s. Fuller tool coverage awaits a published OpenAPI spec.

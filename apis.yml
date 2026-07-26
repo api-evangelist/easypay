@@ -1,7 +1,15 @@
 aid: easypay
 name: EasyPay
-description: EasyPay is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  EasyPay (Fawaterak) is an Egyptian digital payment gateway that lets businesses
+  accept online payments and send invoices and payment links over WhatsApp or SMS
+  without needing a website. It supports Visa, MasterCard, Meeza, Fawry, mobile
+  wallets, and cash collection, and serves more than 20,000 businesses across retail
+  and e-commerce, healthcare, education, real estate, logistics, and hospitality.
+  The Fawaterak REST API (base https://app.fawaterk.com/api/v2/) is authenticated
+  with a vendor Bearer token and exposes operations to list payment methods, create
+  invoice/payment links, initiate payment on an invoice, and retrieve invoice data,
+  with rate limiting signalled via X-RateLimit-* response headers.
 url: https://raw.githubusercontent.com/api-evangelist/easypay/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +17,58 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://fawaterk.com/wp-content/uploads/2023/01/fawaterak-logo.png
 tags:
 - Company
-apis: []
+- Payments
+- Payment Gateway
+- Invoicing
+- Fintech
+- E-commerce
+- Egypt
+- Online Payments
+apis:
+- name: Fawaterak API v2
+  description: >-
+    REST API for the EasyPay/Fawaterak payment gateway. Authenticated with a vendor
+    Bearer token, it lists available payment methods, creates invoice and payment
+    links, initiates payment on an invoice, and retrieves invoice data. Responses
+    use a {status, message} envelope and rate limiting is signalled via X-RateLimit-*
+    headers.
+  humanURL: https://app.fawaterk.com/documentation
+  baseURL: https://app.fawaterk.com/api/v2/
+  tags:
+  - Payments
+  - Invoicing
+  - Payment Links
+  properties:
+  - type: Authentication
+    url: authentication/easypay-authentication.yml
+  - type: Conventions
+    url: conventions/easypay-conventions.yml
+  - type: ErrorCatalog
+    url: errors/easypay-problem-types.yml
+  - type: RateLimits
+    url: rate-limits/easypay-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/easypay-lifecycle.yml
+  - type: MCPServer
+    url: mcp/easypay-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +77,44 @@ maintainers:
 common:
 - type: Website
   url: https://fawaterk.com
+- type: DeveloperPortal
+  url: https://app.fawaterk.com/documentation
+- type: Documentation
+  url: https://app.fawaterk.com/documentation
+- type: APIReference
+  url: https://app.fawaterk.com/documentation
+- type: SignUp
+  url: https://fawaterk.com/join-us/
+- type: Login
+  url: https://app.fawaterk.com/
+- type: Pricing
+  url: https://fawaterk.com/#pricing
+- type: TermsOfService
+  url: https://fawaterk.com/terms/
+- type: PrivacyPolicy
+  url: https://fawaterk.com/privacy-policy/
+- type: Blog
+  url: https://fawaterk.com/blogs/
+- type: Support
+  url: https://fawaterk.com/contact-us/
+- type: Authentication
+  url: authentication/easypay-authentication.yml
+- type: Conventions
+  url: conventions/easypay-conventions.yml
+- type: ErrorCatalog
+  url: errors/easypay-problem-types.yml
+- type: RateLimits
+  url: rate-limits/easypay-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/easypay-lifecycle.yml
+- type: DomainSecurity
+  url: security/easypay-domain-security.yml
+- type: WellKnown
+  url: well-known/easypay-well-known.yml
+- type: MCPServer
+  url: mcp/easypay-mcp.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

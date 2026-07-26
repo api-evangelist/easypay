@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: Live probe of https://app.fawaterk.com/api/v2/ (2026-07-18)
+format: custom
+rfc9457: false
+envelope:
+  shape: '{"status":"error","message":{"<field>":["<message>", ...]}}'
+  status_field: status
+  message_field: message
+  note: >-
+    The "message" object is a map of field name to an array of human-readable
+    validation/authorization messages (Laravel-style validation envelope). This is
+    a custom envelope, not RFC 9457 application/problem+json.
+problems:
+- status: 400
+  field: token
+  message: Token Is Missing
+  cause: No Authorization Bearer token supplied.
+  remediation: 'Send the vendor token as "Authorization: Bearer <token>".'
+  source_operation: POST /api/v2/invoiceInitPay
+- status: 400
+  field: token
+  message: Invalid Token or inactive vendor.
+  cause: The supplied vendor token is invalid or the vendor account is inactive.
+  remediation: Issue/activate a token from the merchant dashboard.
+  source_operation: POST /api/v2/invoiceInitPay
+- status: 400
+  field: content-type
+  message: The content-type field is required.
+  cause: The request did not include a Content-Type header.
+  remediation: Set Content-Type application/json on the request.
+  source_operation: GET /api/v2/getPaymentmethods
+notes: >-
+  Only errors observable without a valid vendor token are captured (no OpenAPI is
+  published to derive the full 4xx/5xx catalog from). Titles/remediation are grounded
+  in the exact messages returned by the production API.

@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: Live probe of /.well-known/* on EasyPay/Fawaterak hosts (2026-07-18)
+hosts:
+- host: https://app.fawaterk.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://fawaterk.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  No /.well-known discovery documents are published on either the website
+  (fawaterk.com) or the API host (app.fawaterk.com). Absence recorded as data.

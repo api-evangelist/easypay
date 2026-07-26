@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: Live probe of https://app.fawaterk.com/api/v2/getPaymentmethods response
+  headers (2026-07-18)
+rate_limits:
+- scope: per-vendor-api
+  limit_count: 60
+  window: unspecified
+  headers:
+    limit: X-RateLimit-Limit
+    remaining: X-RateLimit-Remaining
+  observed:
+    X-RateLimit-Limit: 60
+    X-RateLimit-Remaining: 56
+  note: >-
+    The production API returns X-RateLimit-Limit: 60 and a decrementing
+    X-RateLimit-Remaining on each call (Laravel throttle default shape, typically
+    per-minute). The exact reset window is not published; only the observed limit
+    of 60 is asserted.

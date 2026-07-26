@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: derived
+source: Live probe of https://app.fawaterk.com/api/v2/ (2026-07-18)
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://app.fawaterk.com/documentation
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
+notes: >-
+  Only the URI-path versioning (/api/v2/) is verifiable. No status page, SLA, or
+  deprecation policy is published on the site or the developer portal, so no
+  StatusPage or Deprecation pointers are emitted.
