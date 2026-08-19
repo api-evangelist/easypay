@@ -1,10 +1,9 @@
 generated: '2026-07-18'
 method: derived
 status: candidate
-source: >-
-  Derived from operations verified against the production Fawaterak API
-  (https://app.fawaterk.com/api/v2/, 2026-07-18). No official hosted MCP server was
-  found; no OpenAPI is published, so tools are grounded in live-verified routes only.
+source: Derived from operations verified against the production Fawaterak API (https://app.fawaterk.com/api/v2/,
+  2026-07-18). No official hosted MCP server was found; no OpenAPI is published, so tools are grounded
+  in live-verified routes only.
 server:
   name: easypay
   transport: http
@@ -26,7 +25,11 @@ tools:
   description: Retrieve vendor invoice data.
   source_operation: GET /api/v2/getInvoicesData
   verified: true
-notes: >-
-  Each route was confirmed live: real routes return the JSON auth envelope
-  {"status":"error","message":{"token":[...]}}, whereas unknown routes return HTML
-  404s. Fuller tool coverage awaits a published OpenAPI spec.
+notes: 'Each route was confirmed live: real routes return the JSON auth envelope {"status":"error","message":{"token":[...]}},
+  whereas unknown routes return HTML 404s. Fuller tool coverage awaits a published OpenAPI spec.'
+deployment:
+  mode: none
+  verified: derived
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census
