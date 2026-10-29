@@ -64,6 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-EasyPay is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+EasyPay (Fawaterak) is an Egyptian digital payment gateway that lets businesses accept online payments and send invoices and payment links over WhatsApp or SMS without needing a website. It supports Visa, MasterCard, Meeza, Fawry, mobile wallets, and cash collection, and serves more than 20,000 businesses across retail and e-commerce, healthcare, education, real estate, logistics, and hospitality. The Fawaterak REST API (base https://app.fawaterk.com/api/v2/) is authenticated with a vendor Bearer token and exposes operations to list payment methods, create invoice/payment links, initiate payment on an invoice, and retrieve invoice data, with rate limiting signalled via X-RateLimit-* response headers.
 
-Backed by: 500-global — https://fawaterk.com
+**Areas:** Company · Payments · Payment Gateway · Invoicing · Fintech · E-Commerce · Egypt · Online Payments
+
+## EasyPay on APIs.io
+
+Everything profiled for EasyPay is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/easypay/](https://apis.io/providers/easypay/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Fawaterak API v2](https://apis.io/apis/easypay/fawaterak-api-v2/) — REST API for the EasyPay/Fawaterak payment gateway. Authenticated with a vendor Bearer token, it lists available payment methods, creates invoice and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [easypay](https://apis.io/servers/easypay/easypay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Easypay Authentication](https://apis.io/security/easypay/easypay-authentication/)
+- [Easypay Domain Security](https://apis.io/security/easypay/easypay-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Easypay Rate Limits](https://apis.io/rate-limits/easypay/easypay-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://fawaterk.com)
+- [Documentation](https://app.fawaterk.com/documentation)
+- [API reference](https://app.fawaterk.com/documentation)
+- [Pricing](https://fawaterk.com/#pricing)
+- [Sign up](https://fawaterk.com/join-us/)
+- [Support](https://fawaterk.com/contact-us/)
+- [Blog](https://fawaterk.com/blogs/)
+- [Terms of service](https://fawaterk.com/terms/)
+- [Privacy policy](https://fawaterk.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 25.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 39.5 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.9** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/easypay/](https://apis.io/providers/easypay/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for EasyPay: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/easypay/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
